@@ -14,12 +14,12 @@ class ListAllUsersUseCase {
 
       if (!userPermited)
         throw new Error(
-          "Usuário não encontrado ou não posssue permissão para esta ação",
+          "Usuário não encontrado ou não posssue permissão para esta ação"
         );
 
       if (!userPermited.admin)
         throw new Error(
-          "Usuário não encontrado ou não posssue permissão para esta ação",
+          "Usuário não encontrado ou não posssue permissão para esta ação"
         );
     }
     const usersList = this.usersRepository.list();
