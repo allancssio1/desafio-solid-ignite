@@ -13,9 +13,14 @@ class ListAllUsersUseCase {
       const userPermited = this.usersRepository.findById(user_id);
 
       if (!userPermited)
-        throw new Error("error user not found ListAllUsersUseCase");
+        throw new Error(
+          "Usuário não encontrado ou não posssue permissão para esta ação",
+        );
 
-      if (!userPermited.admin) throw new Error("error ListAllUsersUseCase");
+      if (!userPermited.admin)
+        throw new Error(
+          "Usuário não encontrado ou não posssue permissão para esta ação",
+        );
     }
     const usersList = this.usersRepository.list();
     return usersList;

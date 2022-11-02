@@ -12,7 +12,7 @@ class TurnUserAdminUseCase {
     // Complete aqui
     const user = this.usersRepository.findById(user_id);
 
-    if (!user) throw new Error("error TurnUserAdminUseCase");
+    if (!user) throw new Error("Usuário sem permissão ou não encontrado");
 
     return this.usersRepository.turnAdmin(user);
   }
